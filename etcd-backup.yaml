@@ -1,0 +1,15 @@
+apiVersion: etcd.database.coreos.com/v1beta2
+kind: EtcdBackup
+metadata:
+  name: etcd-cluster-backup
+  namespace: my-etcd
+  annotations:
+    - etcd.database.coreos.com/scope: clusterwide
+spec:
+  etcdEndpoints:
+    - "http://etcd-cluster-client.my-etcd.svc:2379/"
+  storageType: S3
+  s3:
+    endpoint: "https://s3.eu-west-2.amazonaws.com/"
+    path: "operators/etcd/etcd.backup"
+    awsSecret: aws
