@@ -1,5 +1,13 @@
 # operator-meetup
 
+This repository contains all the material that was used to present the Essential Data Meetup of March 6, 2019 on the Operators.
+
+# slides
+
+[Operators on Google slides](https://docs.google.com/presentation/d/1hJZFsOnbILe26SJre5RXLTbqug8XHnEs3Otn5hqeBuw/edit?usp=sharing)
+
+# Demo
+
 create manage k8S sur gcloud (project postgres) :
 
 --- etcd operator ---
@@ -82,18 +90,18 @@ $ ./etcdctl --endpoints http://127.0.0.1:2379 get foo
 
 in order to access s3 add secret :
 
-$ kubectl create secret generic aws --from-file=credentials --from-file=config
+$ kubectl -n my-etcd create secret generic aws --from-file=credentials --from-file=config
 
 backup the data :
 
-$ kubectl apply -f etcd-backup.yml
+$ kubectl apply -f etcd-backup.yaml
 
-check on aws :
+check on aws :  
 ...
 
 delete data on the cluster :
 
-./etcdctl --endpoints http://127.0.0.1:2379 del foo
+$ ./etcdctl --endpoints http://127.0.0.1:2379 del foo
 
 check if data doesn't exist anymore on the cluster :
 
