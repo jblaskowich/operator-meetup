@@ -1,4 +1,0 @@
-clone operator
-
-git clone -b 3.5.0 https://github.com/CrunchyData/postgres-operator.git
-cd postgres-operator
