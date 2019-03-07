@@ -94,7 +94,7 @@ $ kubectl -n my-etcd create secret generic aws --from-file=credentials --from-fi
 
 backup the data :
 
-$ kubectl apply -f etcd-backup.yaml
+$ kubectl apply -f etcd-backup.yml
 
 check on aws :  
 ...
