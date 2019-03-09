@@ -10,6 +10,6 @@ spec:
     - "http://etcd-cluster-client.my-etcd.svc:2379/"
   storageType: S3
   s3:
-    endpoint: "https://s3.eu-west-2.amazonaws.com/"
-    path: "operators/etcd/etcd.backup"
-    awsSecret: credentials
+    endpoint: "http://default.svc.cluster.local:9000/"
+    path: "minio-service/foo/etcdbackup"
+    awsSecret: aws

@@ -18,7 +18,7 @@ $ kubectl create -f https://raw.githubusercontent.com/operator-framework/operato
 
 check deployment :
 
-$ kubectl get po --all-namespaces -w
+$ kubectl get po -n olm -w
 
 install etcd operator via olm :
 
@@ -26,11 +26,11 @@ $ kubectl create -f https://www.operatorhub.io/install/etcdoperator-community.v0
 
 check deployment :
 
-$ kubectl get po --all-namespaces -w
+$ kubectl get po -n my-etcd -w
 
 create cluster with version 3.1.16 :
 
-$ kubectl apply -f etcd-cluster-oldver.yml
+$ kubectl apply -f etcd-cluster-3.1.16.yml
 
 check deployment :
 
@@ -70,7 +70,7 @@ $ ./etcdctl --endpoints http://127.0.0.1:2379 get foo
 
 update version of etcd :
 
-$ kubectl apply -f etcd-cluster.yml
+$ kubectl apply -f etcd-cluster-3.2.13.yml
 
 check update :
 
@@ -90,7 +90,7 @@ $ ./etcdctl --endpoints http://127.0.0.1:2379 get foo
 
 in order to access s3 add secret :
 
-$ kubectl -n my-etcd create secret generic aws --from-file=credentials --from-file=config
+$ kubectl -n my-etcd create secret generic credentials --from-file=credentials --from-file=config
 
 backup the data :
 
